@@ -116,20 +116,7 @@ namespace Calculadora
 
         public string ExecutarOperacao()
         {
-            if (numero1.Contains(","))
-            {
-                if (numero1.Split(",")[1].Length == 0)
-                {
-                    numero1 = numero1.Split(",")[0];
-                }
-            }
-            if (numero2.Contains(","))
-            {
-                if (numero2.Split(",")[1].Length == 0)
-                {
-                    numero2 = numero2.Split(",")[0];
-                }
-            }
+            FormatarNumeros();
             double n1 = Convert.ToDouble(numero1);
             double n2 = Convert.ToDouble(numero2);
             string resultado = "";
@@ -153,6 +140,24 @@ namespace Calculadora
                     break;
             }
             return resultado;
+        }
+
+        private void FormatarNumeros()
+        {
+            if (numero1.Contains(","))
+            {
+                if (numero1.Split(",")[1].Length == 0)
+                {
+                    numero1 = numero1.Split(",")[0];
+                }
+            }
+            if (numero2.Contains(","))
+            {
+                if (numero2.Split(",")[1].Length == 0)
+                {
+                    numero2 = numero2.Split(",")[0];
+                }
+            }
         }
 
         private void AtualizarTextBox()
